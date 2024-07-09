@@ -3,6 +3,7 @@
 <strong>IMPORTANTE</strong>
 <p>Debes de ejecutar el script como admisnistrador desde el <strong>Poweshell</strong>, solo ejecutalo como:</p>
 <pre><code>./script.bat</code></pre>
+<p><i>(Obviamente desde la ruta donde lo tienes)</i></p>
 <p>Esto instalara:</p>
 <ul>
   <li>Spotify</li>
