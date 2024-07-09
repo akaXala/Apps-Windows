@@ -3,5 +3,5 @@
   <h2>Script para resintalar todo</h2>
   <strong>IMPORTANTE</strong>
   <p>Debes de ejecutar el script como admisnistrador desde el <strong>Poweshell</strong>, solo ejecutalo como</p>
-  ```<p>./script.bat</p>```
 </html>
+```./script.bat```
