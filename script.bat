@@ -1,34 +1,43 @@
-REM instalación winget
-$progressPreference = 'silentlyContinue'
-Write-Information "Downloading WinGet and its dependencies..."
-Invoke-WebRequest -Uri https://aka.ms/getwinget -OutFile Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
-Invoke-WebRequest -Uri https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx -OutFile Microsoft.VCLibs.x64.14.00.Desktop.appx
-Invoke-WebRequest -Uri https://github.com/microsoft/microsoft-ui-xaml/releases/download/v2.8.6/Microsoft.UI.Xaml.2.8.x64.appx -OutFile Microsoft.UI.Xaml.2.8.x64.appx
-Add-AppxPackage Microsoft.VCLibs.x64.14.00.Desktop.appx
-Add-AppxPackage Microsoft.UI.Xaml.2.8.x64.appx
-Add-AppxPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+@echo off
+setlocal
 
-REM Spotify
-winget install Spotify.Spotify
-REM Steam
-winget install Valve.Steam
-REM Discord
-winget install Discord.Discord
-REM VSCode
-winget install Microsoft.VisualStudioCode
-REM PowerToys
-winget install Microsoft.PowerToys
-REM 7zip
-winget install 7zip.7zip
-REM Office 365
-winget install Microsoft.Office
+:: Descargar WinGet y sus dependencias
+echo Downloading WinGet and its dependencies...
 
-REM ****** Opcionales ******
-REM (Solo debes quitar el REM)
+:: Descargar los archivos necesarios
+powershell -Command "Invoke-WebRequest -Uri 'https://aka.ms/getwinget' -OutFile 'Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle'"
+powershell -Command "Invoke-WebRequest -Uri 'https://aka.ms/Microsoft.VCLibs.x64.14.00.Desktop.appx' -OutFile 'Microsoft.VCLibs.x64.14.00.Desktop.appx'"
+powershell -Command "Invoke-WebRequest -Uri 'https://github.com/microsoft/microsoft-ui-xaml/releases/download/v2.8.6/Microsoft.UI.Xaml.2.8.x64.appx' -OutFile 'Microsoft.UI.Xaml.2.8.x64.appx'"
 
-REM winget install RiotGames.LeagueOfLegends.LA1    REM League Of Legends
-REM winget install Google.Chrome                    REM Google Chrome
-REM winget install Mozilla.Firefox                  REM Firefox
-REM winget install Adobe.Acrobat.Reader.64-bit      REM Adobe Reader
-REM winget install RARLab.WinRAR                    REM WinRar
-REM winget install Mojang.MinecraftLauncher         REM Minecraft
+:: Instalar los paquetes
+echo Installing WinGet and dependencies...
+powershell -Command "Add-AppxPackage -Path 'Microsoft.VCLibs.x64.14.00.Desktop.appx'"
+powershell -Command "Add-AppxPackage -Path 'Microsoft.UI.Xaml.2.8.x64.appx'"
+powershell -Command "Add-AppxPackage -Path 'Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle'"
+
+:: Esperar un momento para asegurar que WinGet esté completamente instalado
+timeout /t 10 /nobreak >nul
+
+:: Instalar las aplicaciones usando winget
+echo Installing applications using winget...
+winget install Spotify.Spotify --silent
+winget install Valve.Steam --silent
+winget install Discord.Discord --silent
+winget install Microsoft.VisualStudioCode --silent
+winget install Microsoft.PowerToys --silent
+winget install 7zip.7zip --silent
+winget install Microsoft.Office --silent
+
+:: Opcionales
+:: Descomentar las siguientes líneas para instalar aplicaciones opcionales
+
+:: winget install RiotGames.LeagueOfLegends.LA1 --silent
+:: winget install Google.Chrome --silent
+:: winget install Mozilla.Firefox --silent
+:: winget install Adobe.Acrobat.Reader.64-bit --silent
+:: winget install RARLab.WinRAR --silent
+:: winget install Mojang.MinecraftLauncher --silent
+
+echo Done.
+endlocal
+pause
