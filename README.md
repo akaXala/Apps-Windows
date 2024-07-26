@@ -12,5 +12,6 @@
   <li>7zip</li>
   <li>Office 365</li>
 </ul>
+<p>En el caso de Office 365 tarda más, así que no cierres la terminal que te abra automaticamete</p>
 <p>Puedes modificar el script de forma que puedes quitar algún programa</p>
 <p>El script también cuenta con programas opcionales en caso de que quieras instalarlos</p>
