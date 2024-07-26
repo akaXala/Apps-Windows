@@ -1,9 +1,7 @@
-<h1>Obtener apps</h1>
-<h2>Script para resintalar todo</h2>
+<h1>Instalar apps</h1>
+<h2>Script para hacer más fácil la instalación</h2>
 <strong>IMPORTANTE</strong>
-<p>Debes de ejecutar el script como admisnistrador desde el <strong>Poweshell</strong>, solo ejecutalo como:</p>
-<pre><code>./script.bat</code></pre>
-<p><i>(Obviamente desde la ruta donde lo tienes)</i></p>
+<p>Debes de ejecutar el script sin permisos de administrador, solo da doble click en el <i>.bat</i></p>
 <p>Esto instalara:</p>
 <ul>
   <li>Spotify</li>
